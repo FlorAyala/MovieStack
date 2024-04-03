@@ -2,7 +2,7 @@
 let contenedorCards = document.getElementById("contenedorCards")//invoca al contenedor para despues renderisar las cards en el html
 
 
-//crear las cards
+//crear las cards //tagline == eslogan
 let crearCards = obj => `
         <img class=" h-1/2 object-contain " src="${obj.image}" alt="${obj.title}">
         <h3 class= "font-medium pl-4 text-lg ">${obj.title}</h3>
