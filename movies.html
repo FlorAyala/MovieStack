@@ -30,6 +30,22 @@
         </nav>
     </header>
     <main class="min-w-full bg-gray-300">
+        <!-- FILTRO DE NOMBRE Y CHECKS -->
+        <div class="min-h-20 bg-black flex flex-col justify-center items-center gap-5 lg:flex-row">
+            <div class="flex ">
+                <label for="" class="text-white">Search by name
+                    <input type="text" id="search" class="text-black ">
+                </label>
+            </div>
+            <div class="ml-5" >
+                
+                <select name="movies" id="contenedorSelect">
+                     <option value="" disabled selected >Select genres</option>    
+                     <!-- <option value="">ALL</option>                           -->
+               </select>
+             
+            </div>            
+        </div>
         <section class="flex flex-col justify-center">
             <div class="">
                 <h2 class="text-center text-7xl mt-5 font-semibold  " id="shadowMovie">Movies</h2>              
@@ -38,7 +54,7 @@
             <!-- CARDS -->
             <div id="contenedorCards" class="flex justify-center flex-wrap gap-10 mt-5 mb-9 ">
                 
-            </div>
+            </div>            
         </section>
 
     </main>
@@ -49,7 +65,8 @@
         <h4 class="text-white pb-3">MindHub-Cohort 54</h4>
     </footer>
     <script src="./moviestack-data.js"></script>
-    <script src="./main.js"></script>
+    <script  type="module" src="./main.js"></script>
+
 
 </body>
 

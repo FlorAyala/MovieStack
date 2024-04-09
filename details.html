@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/Moviestack_favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="MovieStack page">
+    <meta name="keywords" content="movie, ">
+    <meta name="author" content="Florencia Ayala">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>MovieStack</title>
+</head>
+
+<body>
+    <header id="top"
+        class="flex flex-row place-content-around bg-black items-center md:justify-between lg:justify-between md:pr-2 lg:pr-5">
+        <div class="flex items-center justify-start">
+            <img class="w-32 lg:w-[250px] " src="./assets/img/Moviestack_logotipo1.png" alt="">
+            <!-- <h1 class="text-white">MovieStack</h1> -->
+        </div>
+        <nav class="text-white ">
+            <a class="rounded-xl border-white border p-3 hover:bg-indigo-900  " href="./index.html">HOME</a>
+            <a class="rounded-xl border-white border p-3 hover:bg-indigo-900  " href="./movies.html">MOVIES</a>
+            <a class="rounded-xl border-white border p-3 hover:bg-indigo-900" href="./fav.html">FAVS</a>
+        </nav>
+    </header>
+    <main class="min-w-full bg-gray-300  ">
+        <section class="flex  justify-center flex-col p-[40px]">
+            <div class="">
+                <h2 class="text-center text-7xl mt-5  " id="shadowMovie">Details</h2>
+            </div>
+
+            <!-- CARDS -->
+            <div  class="flex flex-col w-3/4 h-3/5 mt-3 ">
+                <div id="contenedorCardsDetails" class="flex flex-col items-center gap-5  lg:flex-row ">
+
+                </div>
+                <section class=" flex flex-col lg:flex-row lg:mt-3">
+                    <table class="w-3/4 " id="tabla">
+                    </table>
+                    
+                    <table class="w-3/4 m-5 " id="tabla2">
+                    </table>
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="flex flex-col place-content-around bg-black items-center min-h-20 ">
+        <a href="#top"> <img class="w-10 animate-bounce mt-5 " data-twe-toggle="tooltip"
+                title="Click to go back to top!" src="./assets/img/Moviestack_isotipo.png" alt=""></a>
+
+        <h4 class="text-white pb-3">MindHub-Cohort 54</h4>
+    </footer>
+    <script src="./moviestack-data.js"></script>
+    <script type="module" src="./details.js"></script>
+
+</body>
+
+</html>
