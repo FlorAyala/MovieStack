@@ -19,7 +19,7 @@ let crearCards = obj => `
 </div>
   
 `
-let cards = (array) => array.length !=0 ? array.map(crearCards).reduce((a, b) => a + b, '') : '<h2>there is no coincidence</h2> '
+let cards = (array) => array.length !='' ? array.map(crearCards).reduce((a, b) => a + b, '') : '<h2>there is no coincidence</h2> '
 
 
 
@@ -37,31 +37,34 @@ let crearSelect = genero => `
 <option value="${genero}">${genero}</option>
 `
 
-
-let select = array => array.map(crearSelect).reduce((a, b) => a + b, '')
+let select =  array =>array.map(crearSelect).reduce((a, b) => a + b, '')
 contenedorSelect.innerHTML += select(generos(data))
+
 
 let selecMovies = []
 let peliculaIngresada = ''
 
 contenedorSelect.addEventListener('change', e => {
-    selecMovies = [...document.querySelectorAll('select')].map(select => select.value)
-    //console.log(selecMovies);
+    selecMovies = [...document.querySelectorAll('select')].map(select => select.value) 
     contenedorCards.innerHTML = cards(filtroPorNombre(filtroPorSelect(data,selecMovies),peliculaIngresada))
-
+    if( selecMovies == ''){
+        contenedorCards.innerHTML = cards(data);
+    }
+    
 })
 
 
 search.addEventListener('keyup', e => {
     peliculaIngresada = e.target.value
    // console.log( contenedorCards.innerHTML = cards(filtroPorNombre(filtroPorSelect(data, selecMovies), peliculaIngresada)));
-    contenedorCards.innerHTML = cards( data.filter(peliculas => peliculas.title.toLowerCase().includes(peliculaIngresada.trim().toLowerCase())))//usamos lafuncion de crearCards,  
+    contenedorCards.innerHTML = cards( filtroPorNombre(data, peliculaIngresada))//usamos lafuncion de crearCards,  
   
 })
 
 //funcion cruzados  // hago 2 funciones independientes
 //sacque el filtro de select para poder usarlo donde yo quiera
 //let filtroPorSelect = (array, arraySelect) =>  array.filter(peliculas => peliculas.genres.some(value => arraySelect.includes(value))) 
+
 let filtroPorNombre = (array, peliculaIngresada) => array.filter(peliculas => peliculas.title.toLowerCase().includes(peliculaIngresada.trim().toLowerCase()))
 //saco  el nombre de la pelicula ingresa para poder usarlo donde yo quiera
 
