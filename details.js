@@ -17,7 +17,7 @@ fetch('https://moviestack.onrender.com/api/movies',
         movie = data.movies
         //console.log(movie);
         let peliculas = (array, key) => array.find(obj => obj.id === key)
-
+        
 
         contenedorPrincipal.innerHTML = (crearCards2(peliculas(movie, id)));
         tabla.innerHTML = (crearTabla(peliculas(movie, id)));
